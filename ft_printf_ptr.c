@@ -6,13 +6,26 @@
 /*   By: fruiz-ca <fruiz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:47:42 by fruiz-ca          #+#    #+#             */
-/*   Updated: 2022/08/11 11:47:36 by fruiz-ca         ###   ########.fr       */
+/*   Updated: 2022/08/13 15:21:16 by fruiz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	set_ptr(uintptr_t ptr)
+int	ptr_len(unsigned long ptr)
+{
+	int	len;
+
+	len = 0;
+	while (ptr != 0)
+	{
+		len++;
+		ptr = ptr / 16;
+	}
+	return (len);
+}
+
+void	set_ptr(unsigned long ptr)
 {
 	if (ptr >= 16)
 	{
@@ -28,19 +41,22 @@ void	set_ptr(uintptr_t ptr)
 	}
 }
 
-int	ptr_printer(unsigned long long ptr)
+int	ptr_printer(unsigned long ptr)
 {
 	int	len;
 
 	len = 0;
 	write(1, "0x", 2);
+	len += 2;
 	if (ptr == 0)
 	{
 		write(1, "0", 1);
+		len += 1;
 	}
 	else
 	{
 		set_ptr(ptr);
+		len += ptr_len(ptr);
 	}
 	return (len);
 }

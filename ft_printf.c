@@ -6,7 +6,7 @@
 /*   By: fruiz-ca <fruiz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 13:07:45 by fruiz-ca          #+#    #+#             */
-/*   Updated: 2022/08/11 12:50:14 by fruiz-ca         ###   ########.fr       */
+/*   Updated: 2022/08/13 15:20:29 by fruiz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	checker(va_list args, const char key)
 	else if (key == 's')
 		len += str_printer(va_arg(args, char *));
 	else if (key == 'p')
-		len += ptr_printer(va_arg(args, unsigned long long));
+		len += ptr_printer(va_arg(args, unsigned long));
 	else if (key == 'd' || key == 'i')
 		len += int_printer(va_arg(args, int));
 	else if (key == 'u')

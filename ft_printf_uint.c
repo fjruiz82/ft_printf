@@ -6,7 +6,7 @@
 /*   By: fruiz-ca <fruiz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:51:11 by fruiz-ca          #+#    #+#             */
-/*   Updated: 2022/08/11 12:47:05 by fruiz-ca         ###   ########.fr       */
+/*   Updated: 2022/08/13 15:16:18 by fruiz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_u_nlen(unsigned int n)
 	i = 0;
 	while (n != 0)
 	{
-		n /= 10;
+		n = n / 10;
 		i++;
 	}
 	return (i);
@@ -38,7 +38,7 @@ char	*ft_uitoa(unsigned int n)
 	while (n != 0)
 	{
 		tmp[i - 1] = n % 10 + 48;
-		n /= 10;
+		n = n / 10;
 		i--;
 	}
 	return (tmp);
@@ -47,16 +47,16 @@ char	*ft_uitoa(unsigned int n)
 int	u_int_printer(int n)
 {
 	int		len;
-	char	*num;
+	char	*uint_to_str;
 
 	len = 0;
 	if (n == 0)
 		len += write(1, "0", 1);
 	else
 	{
-		num = ft_uitoa(n);
-		len = str_printer(num);
-		free(num);
+		uint_to_str = ft_uitoa(n);
+		len = str_printer(uint_to_str);
+		free(uint_to_str);
 	}
 	return (len);
 }

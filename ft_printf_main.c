@@ -5,21 +5,22 @@ int	main(void)
 {
 	char *str = "Hola mundo";
 	char c = 'a';
-	int x = 512343452;
+	int x = 0;
 
-	printf("%c\n", c);
-	ft_printf("%c\n", c);
-		printf("%s\n", str);
-	ft_printf("%s\n", str);
-	printf("%p\n", str);
-	ft_printf("%p\n", str);
-	printf("%i\n", x);
-	ft_printf("%i\n", x);
-	printf("%u\n", x);
-	ft_printf("%u\n", x);
-	printf("%x\n", x);
-	ft_printf("%x\n", x);
-	printf("%%\n");
-	ft_printf("%%\n");
+	printf("char: %c\n", c);
+	ft_printf("-char: %c\n", c);
+	printf("string: %s\n", str);
+	ft_printf("-string: %s\n", str);
+	printf("\n%d\n",printf("puntero: %p\n", str));
+	printf("\n%d\n",ft_printf("-puntero: %p\n", str));
+	printf("entero: %i\n", x);
+	ft_printf("-entero: %i\n", x);
+	printf("unsigned: %u\n", x);
+	ft_printf("-unsigned: %u\n", x);
+	printf("hexadecimal: %x\n", x);
+	ft_printf("-hexadecimal: %x\n", x);
+	printf("Por ciento:%%\n");
+	ft_printf("- Por ciento: %%\n");
+	printf("\n%d\n",printf("asdf"));
 	return (0);
 }
